@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            height: 100vh;
+            width: 100%;
+        }
+        
+         :root {
+            --color-1: red;
+            --color-2: green;
+            --color-3: yellow;
+            --color-block: burlywood;
+        }
+        
+        .block-1 {
+            background-color: var(--color-block);
+            height: 400px;
+            padding: 5px;
+        }
+        
+        .item {
+            height: 100px;
+            width: 120px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .it1 {
+            background-color: aquamarine;
+        }
+        
+        .it1:hover {
+            background-color: brown;
+        }
+        
+        .it2 {
+            background-color: chartreuse;
+            /*transition-property: background-color,width;
+        transition-duration:1s,1s ;/*khoang thoi gian bien doi khi hover
+        transition-timing-function:ease-in-out ;
+    **/
+            animation-name: loading;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        
+        @keyframes loading {
+            0% {}
+            50% {
+                background-color: red;
+            }
+            100% {
+                background-color: yellow;
+            }
+        }
+        
+        .it2:hover {
+            width: 200px;
+            background-color: rgb(20, 220, 53);
+        }
+        
+        ul {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        li {
+            /*display:inline-block;**/
+            margin-right: 5px;
+            display: block;
+            padding: 5px;
+            background-color: aquamarine;
+            position: relative;
+        }
+        
+        li:hover {
+            background-color: brown;
+        }
+        
+        li::after {
+            content: '';
+            width: 0;
+            height: 4px;
+            background-color: black;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 1s ease-in-out;
+        }
+        
+        li:hover::after {
+            width: 100%;
+            background-color: crimson;
+        }
+    </style>
+    <div class="container">
+        <div class="block-1">
+            <div class="item it1">The 1</div>
+            <div class="item it2">The 2</div>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>Hotline</li>
+            <li>Country</li>
+        </ul>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
